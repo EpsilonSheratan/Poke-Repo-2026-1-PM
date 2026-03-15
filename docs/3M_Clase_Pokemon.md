@@ -3,7 +3,6 @@
 
 ## Integrantes
 - Juan Diego Cuartas Casas
-- 
 
 ## Objetivos 📌
 1. Desarrollar la clase Pokemon
@@ -60,10 +59,10 @@ A partir de lo descrito, Basandonos en la franquicia y videojuegos de pokemon, s
 - *Nivel* : Atributo pivote, capaz de moderar los atributos generales del pokemon, modificable a partir de una acción de mejora que posea el pokemon
 - *Capacidad de defensa* : Al igual que el pokemon es capaz de influir a otro, este tambien es condicionado contra otro objeto, por lo que el atributo *capacidad de defensa* logra controlar más la interacción de combate entre pokemones.
 - *Habilidad especial* : Cómo medio de ataque el pokemon poseera una habilidad individual que altere la fuerza y resistencia del pokemon, generando mayor diversidad y campo de juego en las relaciones
-- *Ataques*  : Acciones consecutivas en el campo de batalla, cáda una poseera una característica espeial, aumentando la variabilidad de sus estadísticas
+- *Ataques*  : Acciones consecutivas en el campo de batalla, cáda una posee una característica espeial, aumentando la variabilidad de sus estadísticas
 - *Evolución* : Medida importante que rastrea el desarrollo del objeto, capaz de aumentar su atributo *Nivel* a partir de una acción controlada
 
-Finalmente, aunque muchas características sean bienvenidas, se consideran cómo las fundamentales para la relación de un pokemon en el mundo virtual
+Finalmente, aunque muchas características sean bienvenidas, estas se consideran cómo las fundamentales para la relación de un pokemon en el mundo virtual
 
 Por otro lado, a partir de estás características, el pokemon se comportará en un ambiente de combate con acciones que todos los objetos poseen:
 
@@ -96,5 +95,39 @@ de forma que una sintaxis correcta seria:
 --- 
 
 ## Diagrama UML
+A partir de el constructor propuesto, se modelo a traves de un lenguaje de modelado unificado la clase Pokemon:
+
+```mermaid
+classDiagram
+    class Pokemon{
+    + int Vida
+    + str Tipo
+    + Str nombre
+    + List aspecto
+    # int fuerza_Básica
+    # int defensa
+    # str habilidad_especial
+    # dict ataques
+    - int Evolución
+
+    # Atacar(objetivo)
+    # Defender()
+    - Evolucionar()
+    }
+
+```
+Se consideraron lós encapsulamientos de cáda clase con respecto a cómo estás actuaran y si algunas presciden de métodos o atributos para modificarse
+
+- Público: Libre de accionar y observable para otras entidades
+- Protedigo : Individual para cáda objeto, modificable a partir de un método (*Ejemlpo* el método **Evolucionar()** módifica las variables *fuerza_básica* y *defensa*)
+- Privado : Solamente capaz de modificarse a partir de procesos de métodos, sólo manipulable adentro de la misma clase, incapaz de observarse por otros objetos
+
+---
+
+**F**inalmente, proponemos a partir de está documentación el diseño la clase pokemon basandonos en el cóntexto y el diagrama UML.
 
 ## Referencias
+
+- Repositorio: [felipeg17/poke-repo](https://github.com/felipeg17/poke-repo)
+- Documentación UML : [Mermaid](https://mermaid.js.org/)
+- Se utilizó **Copilot**(Github) como apoyo para lluvia de ideas y redacción (atributos, métodos y estructura del documento). Validado por el grupo 3M.
