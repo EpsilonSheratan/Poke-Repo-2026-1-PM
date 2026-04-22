@@ -89,7 +89,7 @@ CombatEngine --> TypeRelations
 %% Esta es una clase que posee y gestiona la clase Pokemon.%%
 class Trainer{
   -name: str
-  -team: list
+  -team: list[Pokemon]
 
   +_init_(name: str, team: list)
   +add_pokemon(pokemon: Pokemon)
@@ -186,6 +186,7 @@ Field --> CombatEngine
 
 %% La clase Field gestionará los dos Pokémon activos (que ahora pueden ser FirePokemon, WaterPokemon, etc.), los turnos y las condiciones de victoria.%%
 class Field{
+    -active_pokemon: list[Pokemon]
     +resolve_turn()
     %%Determina qué Pokemon ataca primero basandose en la velocidad de sus stats.%%
     +execute_attack()
