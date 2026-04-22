@@ -91,13 +91,12 @@ Permite al Pokémon reducir el daño recibido utilizando sus estadísticas defen
 
 ---
 
-### ***evolve(new_level: int, new_ability: str): void***
+### ***evolve(new_level: int): void***
 
-Permite al Pokémon aumentar su nivel y adquirir una nueva habilidad especial.
+Permite al Pokémon aumentar su nivel y evolucionar.
 
 **Parámetros:**
 - `new_level (int)`  
-- `new_ability (str)`  
 
 ---
 
